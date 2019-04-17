@@ -17,16 +17,16 @@ module.exports = function(app) {
   app.get("/assets/:type/:file", function(req, res) {
     let type = req.params.type;
     let file = req.params.file;
-    res.sendFile(path.join(__dirname, "../public/assets/"+type+"/"+file));
+    res.sendFile(path.join(__dirname, "../public/"+type+"/"+file));
   });
 
   // route for survey
   app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/survey.html"));
+    res.sendFile(path.join(__dirname, "../pages/survey.html"));
   });
 
   // catch all routes and default to home
   app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/home.html"));
+    res.sendFile(path.join(__dirname, "../pages/home.html"));
   });
 };
