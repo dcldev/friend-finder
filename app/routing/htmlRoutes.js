@@ -13,8 +13,8 @@ module.exports = function(app) {
   // Below code handles when users "visit" a page.
   // In each of the below cases the user is shown an HTML page of content
 
-  // load assets files
-  app.get("/assets/:type/:file", function(req, res) {
+  // loading public files
+  app.get("/public/:type/:file", function(req, res) {
     let type = req.params.type;
     let file = req.params.file;
     res.sendFile(path.join(__dirname, "../public/"+type+"/"+file));
